@@ -74,6 +74,24 @@
                     10 é menor 100 e 9 igual a 9
                 </cfif>
             </li>
+
+            <!-- Switch Case -->
+            <li>
+                <cfswitch expression="400">
+                    <cfcase value = 100>
+                        O valor é 100
+                    </cfcase>
+                    <cfcase value="200">
+                        O valor é 200
+                    </cfcase>
+                    <cfcase value="300">
+                        O valor é 300
+                    </cfcase>
+                    <cfdefaultcase>
+                        Nenhuma das opcoes
+                    </cfdefaultcase>
+                </cfswitch>
+            </li>
         </ul>
 
     </body>
