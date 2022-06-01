@@ -1,0 +1,60 @@
+Consulta a banco de dados
+
+<cfquery datasource="imediaDB" name="qClientes">
+  SELECT nome, telefone, email, cidade
+  FROM clientes
+  WHERE cidade="Porto Alegre"
+</cfquery>
+
+Listagem de dados (mostrando aos usuários)
+<cfoutput query="qClientes">
+  <li>#nome#</li>
+  <li>#cliente#</li>
+</cfoutput>
+
+Criar, atualizar e ler planilhas Microsoft Excel
+<cfspreadsheet>
+  action="write"
+  filename="#theFile"
+  name="minhaPlanilha"
+  sheetname="cursos"
+  overwrite="true"
+/>
+
+Integração com arquivos externos
+Aquivos XML
+<cffile action="read" file="#arquivo" variable="meuXML">
+<cfset noticiashomeXML=XmlParse(XMLFileText)>
+
+Arquivos no padrão JSON
+data = serializeJSON(qProdutos)
+
+Biblioteca de criação de gráficos
+- line
+- bar
+- pyramid
+- area
+- cone
+- curve
+- cylinder
+- step
+- pie
+- horizontalbar
+- scatter
+
+* Gráficos com flash é recomendado apra navegadores
+
+Criar gráficos
+
+<cfchart chartheight="370" chartwidth="600" format="png">
+  <cfchartseries
+    type="curve"
+    markerstyle="circle"
+    query="qPedidos2015"
+    itemcolumn="data"
+    valuecolumn="faturamento"
+    serieslabel="Faturamento 2015"></cfchartseries>
+    
+</cfchart>
+
+
